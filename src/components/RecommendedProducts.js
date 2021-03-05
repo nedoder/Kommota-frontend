@@ -15,7 +15,7 @@ class RecommendedProducts extends React.Component {
         speed: 400,
         mobileFirst: true,
         slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToScroll: 3,
         responsive: [
             {
                 breakpoint: 991,

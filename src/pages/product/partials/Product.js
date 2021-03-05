@@ -1,6 +1,7 @@
 import React from "react";
 import './Product.css';
 import axios from 'axios';
+import More from "./MoreFromCategory"
 
 class Product extends React.Component {
     
@@ -18,7 +19,6 @@ class Product extends React.Component {
         method: 'get',
         url: 'https://kommota.herokuapp.com/products'
       }).then((response) => {
-          console.log(this.props.match)
         let findProduct = response.data.filter(
           (product) => product._id === this.props.match.params.id
         )
@@ -39,7 +39,7 @@ class Product extends React.Component {
     }
     render() {
     return (
-        
+        <section>
         <section className="product container py-50">
             <div className="product__img-container shadow-dark">
                 <span className="product__badge-giveaway badge-giveaway">
@@ -88,6 +88,8 @@ class Product extends React.Component {
                     </button>
                 </div>
             </div>
+        </section>
+        <More/>
         </section>
     );
     }

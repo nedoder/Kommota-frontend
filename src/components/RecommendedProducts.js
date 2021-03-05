@@ -41,7 +41,6 @@ class RecommendedProducts extends React.Component {
         url: 'https://kommota.herokuapp.com/recommended',
         data: { recommended : true },
       }).then((response) => {
-        console.log(response.data)
         response.data.map((data) => {
             let  image = data.image.slice(0,-18);
             image =  image.replace("file/d/", "thumbnail?id=");

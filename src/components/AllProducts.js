@@ -40,7 +40,6 @@ class AllProducts extends React.Component {
         method: 'get',
         url: 'https://kommota.herokuapp.com/products'
       }).then((response) => {
-        console.log(response.data)
         response.data.map((data) => {
             let  image = data.image.slice(0,-18);
             image =  image.replace("file/d/", "thumbnail?id=");

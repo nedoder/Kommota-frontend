@@ -18,6 +18,12 @@ class Users extends React.Component {
       data: { role: true },
       headers: { Authorization: bearer },
     }).then((response) => {
+          response.data.map((user) => {
+          let image = user.avatar.slice(0,-18);
+          let avatar =  image.replace("file/d/", "thumbnail?id=");
+          user.avatar = avatar;
+          console.log(user.avatar)
+        })
       this.setState({
         allUsers: response.data,
       })

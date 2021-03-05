@@ -2,15 +2,35 @@ import React from "react";
 import './User.css';
 import {NavLink} from "react-router-dom";
 
-function User() {
+class User extends React.Component {
+    constructor() {
+    super();
+    
+    this.state = {
+      showMenu: false,
+    }
+    this.showMenu = this.showMenu.bind(this);
+  }
+
+  showMenu(event) {
+    event.preventDefault();
+    
+    this.setState({
+      showMenu: !this.state.showMenu,
+    });
+  }
+    render() {
     return (
         <div className="user">
-            <button className="user__avatar">
+            <button className="user__avatar"  onClick={this.showMenu}>
                 <img src="./imgs/icons/avatar.svg" alt="Avatar"/>
             </button>
+            {
+          this.state.showMenu
+            ? (
             <ul className="user__menu dropdown shadow-dark">
                 <li>
-                    <NavLink to="" className="dropdown__link">
+                    <NavLink to="/login" className="dropdown__link">
                         <img className="dropdown__link-icon"
                              src="./imgs/icons/login.svg" alt=""
                         />
@@ -20,7 +40,7 @@ function User() {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="" className="dropdown__link">
+                    <NavLink to="/signup" className="dropdown__link">
                         <img className="dropdown__link-icon"
                              src="./imgs/icons/sign-up.svg" alt=""
                         />
@@ -30,17 +50,7 @@ function User() {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="" className="dropdown__link">
-                        <img className="dropdown__link-icon"
-                             src="./imgs/icons/heart.svg" alt=""
-                        />
-                        <span className="dropdown__link-title">
-                            Lista želja
-                        </span>
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="" className="dropdown__link">
+                    <NavLink to="/admin" className="dropdown__link">
                         <img className="dropdown__link-icon"
                              src="./imgs/icons/admin-panel.svg" alt=""
                         />
@@ -50,7 +60,7 @@ function User() {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="" className="dropdown__link">
+                    <NavLink to="/logout" className="dropdown__link">
                         <img className="dropdown__link-icon"
                              src="./imgs/icons/logout.svg" alt=""
                         />
@@ -60,8 +70,14 @@ function User() {
                     </NavLink>
                 </li>
             </ul>
+            )
+            : (
+              null
+            )
+            }
         </div>
     );
+    }
 }
 
 export default User;

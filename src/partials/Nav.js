@@ -1,7 +1,7 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 
-import CategoriesMenu from "./CategoriesMenu";
+
 import './Nav.css';
 
 function Nav() {
@@ -34,7 +34,6 @@ function Nav() {
                             Kako kupiti
                         </NavLink>
                     </li>
-                    <CategoriesMenu/>
                 </ul>
             </div>
         </nav>

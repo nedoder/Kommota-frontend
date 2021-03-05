@@ -1,11 +1,9 @@
 .dropdown {
     display: grid;
-    grid-row-gap: .6rem;
+    grid-row-gap: .8rem;
     padding: .5rem;
     border-radius: .5rem;
     background: var(--white);
-    visibility: hidden;
-    opacity: 0;
 }
 
 .dropdown.open {

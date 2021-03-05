@@ -4,6 +4,8 @@
     padding: .5rem;
     border-radius: .5rem;
     background: var(--white);
+    margin-top: .5rem;
+    margin-right: -1rem;
 }
 
 .dropdown.open {

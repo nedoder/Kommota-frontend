@@ -1,8 +1,45 @@
 import React from "react";
 import './Product.css';
+import axios from 'axios';
 
-function Product() {
+class Product extends React.Component {
+    
+    state = {
+        name: "",
+        description: "",
+        price: "",
+        image: "",
+        category: "",
+        seen: ""
+    }
+    componentDidMount() {
+        
+    axios({
+        method: 'get',
+        url: 'https://kommota.herokuapp.com/products'
+      }).then((response) => {
+          console.log(this.props.match)
+        let findProduct = response.data.filter(
+          (product) => product._id === this.props.match.params.id
+        )
+        let showProduct = findProduct[0]
+        let  image = response.data.image.slice(0,-18);
+        image =  image.replace("file/d/", "thumbnail?id=");
+        response.data.image = image;
+     
+        this.setState({
+            name: response.data.name,
+            description: response.data.description,
+            price: response.data.price,
+            image: response.data.image,
+            category: response.data.category,
+            seen: response.data.seen
+          })
+        })
+    }
+    render() {
     return (
+        
         <section className="product container py-50">
             <div className="product__img-container shadow-dark">
                 <span className="product__badge-giveaway badge-giveaway">
@@ -10,23 +47,23 @@ function Product() {
                         <path d="M18 7H17.65C17.8782 6.53276 17.9979 6.01999 18 5.5C18.003 4.80333 17.7975 4.12169 17.4098 3.54283C17.0221 2.96397 16.4701 2.51438 15.8247 2.25194C15.1794 1.98949 14.4703 1.9262 13.7886 2.07021C13.107 2.21422 12.4841 2.55894 12 3.06C11.5159 2.55894 10.893 2.21422 10.2114 2.07021C9.52975 1.9262 8.82061 1.98949 8.17525 2.25194C7.5299 2.51438 6.97786 2.96397 6.59019 3.54283C6.20252 4.12169 5.99697 4.80333 6 5.5C6.00213 6.01999 6.12178 6.53276 6.35 7H6C5.20435 7 4.44129 7.31607 3.87868 7.87868C3.31607 8.44129 3 9.20435 3 10V12C3 12.2652 3.10536 12.5196 3.29289 12.7071C3.48043 12.8946 3.73478 13 4 13H5V19C5 19.7956 5.31607 20.5587 5.87868 21.1213C6.44129 21.6839 7.20435 22 8 22H16C16.7956 22 17.5587 21.6839 18.1213 21.1213C18.6839 20.5587 19 19.7956 19 19V13H20C20.2652 13 20.5196 12.8946 20.7071 12.7071C20.8946 12.5196 21 12.2652 21 12V10C21 9.20435 20.6839 8.44129 20.1213 7.87868C19.5587 7.31607 18.7956 7 18 7ZM11 20H8C7.73478 20 7.48043 19.8946 7.29289 19.7071C7.10536 19.5196 7 19.2652 7 19V13H11V20ZM11 11H5V10C5 9.73478 5.10536 9.48043 5.29289 9.29289C5.48043 9.10536 5.73478 9 6 9H11V11ZM11 7H9.5C9.20333 7 8.91332 6.91203 8.66665 6.7472C8.41997 6.58238 8.22771 6.34811 8.11418 6.07402C8.00065 5.79994 7.97094 5.49834 8.02882 5.20736C8.0867 4.91639 8.22956 4.64912 8.43934 4.43934C8.64912 4.22956 8.91639 4.0867 9.20736 4.02882C9.49834 3.97094 9.79994 4.00065 10.074 4.11418C10.3481 4.22771 10.5824 4.41997 10.7472 4.66664C10.912 4.91332 11 5.20333 11 5.5V7ZM13 5.5C13 5.20333 13.088 4.91332 13.2528 4.66664C13.4176 4.41997 13.6519 4.22771 13.926 4.11418C14.2001 4.00065 14.5017 3.97094 14.7926 4.02882C15.0836 4.0867 15.3509 4.22956 15.5607 4.43934C15.7704 4.64912 15.9133 4.91639 15.9712 5.20736C16.0291 5.49834 15.9994 5.79994 15.8858 6.07402C15.7723 6.34811 15.58 6.58238 15.3334 6.7472C15.0867 6.91203 14.7967 7 14.5 7H13V5.5ZM17 19C17 19.2652 16.8946 19.5196 16.7071 19.7071C16.5196 19.8946 16.2652 20 16 20H13V13H17V19ZM19 11H13V9H18C18.2652 9 18.5196 9.10536 18.7071 9.29289C18.8946 9.48043 19 9.73478 19 10V11Z" fill="#CC3E00"/>
                     </svg>
                 </span>
-                <img src="/imgs/product.jpg" className="product__img" alt=""/>
+                <img src={this.state.image} className="product__img" alt="Product image"/>
             </div>
             <div className="product__details-btns-wrapper">
                 <div className="product__details">
                     <a href="#" className="product__category">
-                        Stolice
+                        {this.state.category}
                     </a>
                     <h1 className="product__title heading-1 color-neutral-900">
-                        Trpezarijska stolica
+                        {this.state.name}
                     </h1>
                     <div className="product__price">
-                        287
+                        {this.state.price}
                         <img src="/imgs/icons/bitcoin-circle.svg" alt="bitcoins"/>
                     </div>
 
                     <p className="product__description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis dictum semper ac malesuada. Sed viverra nibh aliquet dapibus diam nunc.
+                       {this.state.description}
                     </p>
                 </div>
                 <div className="product__btns">
@@ -34,7 +71,7 @@ function Product() {
                         <svg className="btn-big-icon-text-under__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M21.92 11.6C19.9 6.91 16.1 4 12 4C7.90001 4 4.10001 6.91 2.08001 11.6C2.02494 11.7262 1.99652 11.8623 1.99652 12C1.99652 12.1377 2.02494 12.2738 2.08001 12.4C4.10001 17.09 7.90001 20 12 20C16.1 20 19.9 17.09 21.92 12.4C21.9751 12.2738 22.0035 12.1377 22.0035 12C22.0035 11.8623 21.9751 11.7262 21.92 11.6ZM12 18C8.82001 18 5.83001 15.71 4.10001 12C5.83001 8.29 8.82001 6 12 6C15.18 6 18.17 8.29 19.9 12C18.17 15.71 15.18 18 12 18ZM12 8C11.2089 8 10.4355 8.2346 9.77773 8.67412C9.11993 9.11365 8.60724 9.73836 8.30449 10.4693C8.00174 11.2002 7.92252 12.0044 8.07686 12.7804C8.2312 13.5563 8.61217 14.269 9.17158 14.8284C9.73099 15.3878 10.4437 15.7688 11.2196 15.9231C11.9956 16.0775 12.7998 15.9983 13.5307 15.6955C14.2616 15.3928 14.8864 14.8801 15.3259 14.2223C15.7654 13.5645 16 12.7911 16 12C16 10.9391 15.5786 9.92172 14.8284 9.17157C14.0783 8.42143 13.0609 8 12 8ZM12 14C11.6044 14 11.2178 13.8827 10.8889 13.6629C10.56 13.4432 10.3036 13.1308 10.1522 12.7654C10.0009 12.3999 9.96126 11.9978 10.0384 11.6098C10.1156 11.2219 10.3061 10.8655 10.5858 10.5858C10.8655 10.3061 11.2219 10.1156 11.6098 10.0384C11.9978 9.96126 12.3999 10.0009 12.7654 10.1522C13.1308 10.3036 13.4432 10.56 13.6629 10.8889C13.8827 11.2178 14 11.6044 14 12C14 12.5304 13.7893 13.0391 13.4142 13.4142C13.0391 13.7893 12.5304 14 12 14Z" fill="#444A51"/>
                         </svg>
-                        102
+                        {this.state.seen}
                     </button>
                     {/*product__wish-btn-active*/}
                     <button className="btn btn-big-icon-text-under btn-big-icon-text-under--outline">
@@ -53,6 +90,7 @@ function Product() {
             </div>
         </section>
     );
+    }
 }
 
 export default Product;

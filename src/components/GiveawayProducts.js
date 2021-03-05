@@ -21,14 +21,14 @@ class GiveawayProducts extends React.Component {
                 breakpoint: 991,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 3
+                    slidesToScroll: 2
                 }
             },
             {
                 breakpoint: 767,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2
+                    slidesToScroll: 1
                 }
             }
         ]
@@ -42,6 +42,11 @@ class GiveawayProducts extends React.Component {
         data: { givaway : true },
       }).then((response) => {
         console.log(response.data)
+        response.data.map((data) => {
+            let  image = data.image.slice(0,-18);
+            image =  image.replace("file/d/", "thumbnail?id=");
+            data.image = image;
+        })
         this.setState({
             giveawayProducts: response.data,
           })

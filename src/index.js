@@ -11,7 +11,7 @@ import Admin from "./pages/admin/Admin";
 import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import EditUser from "./pages/editProfile/EditUser"
-import Product from "./pages/product/ProductPage"
+import Product from "./pages/product/partials/Product"
 
 // Slider css
 import "slick-carousel/slick/slick.css";

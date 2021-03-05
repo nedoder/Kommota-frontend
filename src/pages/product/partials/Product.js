@@ -23,17 +23,17 @@ class Product extends React.Component {
           (product) => product._id === this.props.match.params.id
         )
         let showProduct = findProduct[0]
-        let  image = response.data.image.slice(0,-18);
+        let  image = showProduct.image.slice(0,-18);
         image =  image.replace("file/d/", "thumbnail?id=");
         response.data.image = image;
      
         this.setState({
-            name: response.data.name,
-            description: response.data.description,
-            price: response.data.price,
+            name: showProduct.name,
+            description: showProduct.description,
+            price: showProduct.price,
             image: response.data.image,
-            category: response.data.category,
-            seen: response.data.seen
+            category: showProduct.category,
+            seen: showProduct.seen
           })
         })
     }

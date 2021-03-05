@@ -31,3 +31,9 @@
     background-color: var(--secondary-500);
     border-radius: .5rem;
 }
+
+@media (max-width: 600px) {
+    .wrapper {
+        width: 80%;
+    }
+}

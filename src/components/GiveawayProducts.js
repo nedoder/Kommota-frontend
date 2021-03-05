@@ -15,20 +15,20 @@ class GiveawayProducts extends React.Component {
         speed: 400,
         mobileFirst: true,
         slidesToShow: 4,
-        slidesToScroll: 3,
+        slidesToScroll: 4,
         responsive: [
             {
                 breakpoint: 991,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 2
+                    slidesToScroll: 3
                 }
             },
             {
                 breakpoint: 767,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1
+                    slidesToScroll: 2
                 }
             }
         ]

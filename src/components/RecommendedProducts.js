@@ -15,20 +15,20 @@ class RecommendedProducts extends React.Component {
         speed: 400,
         mobileFirst: true,
         slidesToShow: 4,
-        slidesToScroll: 3,
+        slidesToScroll: 4,
         responsive: [
             {
                 breakpoint: 991,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 2
+                    slidesToScroll: 3
                 }
             },
             {
                 breakpoint: 767,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1
+                    slidesToScroll: 2
                 }
             }
         ]
@@ -53,10 +53,13 @@ class RecommendedProducts extends React.Component {
     }
     render() {
     return (
-        
+           
             <Slider {...this.state.sliderSettings} className="products-grid">
+             
             {this.state.recommendedProducts.map((product) => {
+                
                     return (
+                        
                     <Link to={`/product/${product._id}`}>
                     <React.Fragment key={product._id}>
                     <Card
@@ -67,10 +70,11 @@ class RecommendedProducts extends React.Component {
                     />
                     </React.Fragment>
                     </Link>
+                   
                 )
 
           })}
-         
+          
             </Slider>
     );
         }

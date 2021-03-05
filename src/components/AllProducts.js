@@ -15,22 +15,24 @@ class AllProducts extends React.Component {
         speed: 400,
         mobileFirst: true,
         slidesToShow: 4,
-        slidesToScroll: 3,
+        slidesToScroll: 4,
         responsive: [
             {
                 breakpoint: 991,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 2
+                    slidesToScroll: 3
                 }
             },
             {
                 breakpoint: 767,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1
+                    slidesToScroll: 2,
+                    dots: false
                 }
             }
+            
         ]
     }
     
@@ -52,24 +54,26 @@ class AllProducts extends React.Component {
     }
     render() {
     return (
-        
+            
             <Slider {...this.state.sliderSettings} className="products-grid">
+            
             {this.state.allProducts.map((product) => {
+                
                     return (
-                    <Link to={`/product/${product._id}`}>
-                    <React.Fragment key={product._id}>
-                    <Card
-                    category={product.category}
-                    name={product.name}
-                    price={product.price}
-                    image={product.image}
-                    />
-                    </React.Fragment>
-                    </Link>
+                        <Link to={`/product/${product._id}`}>
+                        <React.Fragment key={product._id}>
+                        
+                        <Card
+                        category={product.category}
+                        name={product.name}
+                        price={product.price}
+                        image={product.image}
+                        />
+                        </React.Fragment>
+                        </Link>
                 )
-
           })}
-         
+          
             </Slider>
     );
         }

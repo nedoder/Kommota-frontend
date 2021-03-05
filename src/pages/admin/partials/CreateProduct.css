@@ -1,0 +1,40 @@
+.wrap {
+    width: 60%;
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center;
+    border-radius: .5rem;
+    border: 2px solid var(--primary-500);
+}
+
+#userid,
+#name,
+#description,
+#price,
+#quantity,
+#image,
+#category {
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: .5rem;
+    border: 2px solid var(--neutral-300);
+}
+
+.createProduct {
+    margin: .5rem;
+    font-weight: bold;
+    padding: .5rem;
+}
+
+.createButton {
+    padding: .5rem 1rem;
+    margin: .5rem;
+    background-color: var(--secondary-500);
+    border-radius: .5rem;
+}
+
+@media (max-width: 600px) {
+    .wrap {
+        width: 90%;
+    }
+}

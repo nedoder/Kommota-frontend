@@ -1,0 +1,45 @@
+:root {
+    --font-family: 'Inter', sans-serif;
+
+    /*Colors*/
+    --disabled: #ADAEAE;
+    --shadow: #C4C4C4;
+    --white: #FFFFFF;
+    --black: #000000;
+
+    --neutral-900: #292C31;
+    --neutral-800: #444A51;
+    --neutral-700: #5F6871;
+    --neutral-600: #7B8591;
+    --neutral-500: #BFC4CA;
+    --neutral-400: #CFD3D7;
+    --neutral-300: #DFE2E4;
+    --neutral-200: #EFF0F2;
+    --neutral-100: #FAFAFB;
+
+    --primary-900: #320F00;
+    --primary-800: #651F00;
+    --primary-700: #982F00;
+    --primary-600: #CC3E00;
+    --primary-500: #ff4e00;
+    --primary-400: #FF7233;
+    --primary-300: #FF9567;
+    --primary-200: #FFB99A;
+    --primary-100: #FFDCCD;
+
+    --secondary-900: #32290B;
+    --secondary-800: #655415;
+    --secondary-700: #987E20;
+    --secondary-600: #CCA92B;
+    --secondary-500: #FFD336;
+    --secondary-400: #FFDC5E;
+    --secondary-300: #FFE587;
+    --secondary-200: #FFEEAF;
+    --secondary-100: #FFF6D8;
+}
+
+/*Media queries*/
+
+/*Mobile 480px*/
+/*Tablet 767px*/
+/*Desktop 991px*/

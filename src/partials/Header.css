@@ -1,0 +1,49 @@
+header {
+    background-color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+.header {
+    height: 4.375rem;
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 767px) {
+    .header {
+        height: 5.625rem;
+    }
+
+    .header__btn-cart {
+        margin: 0 auto 0 24px;
+    }
+}
+
+@media (max-width: 766px) {
+    .header::after {
+        content: '';
+        height: 5px;
+        background-color: var(--primary-500);
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .header__logo {
+        width: 9.375rem;
+    }
+
+    .header__btn-cart {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-right: 1rem;
+    }
+
+    .header__btn-cart .badge {
+        padding: 0 .3rem;
+        right: -12px;
+    }
+}

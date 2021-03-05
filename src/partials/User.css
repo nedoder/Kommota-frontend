@@ -1,0 +1,29 @@
+.user {
+    position: relative;
+}
+
+.user__avatar {
+    width: 3.313rem;
+    height: 3.313rem;
+}
+
+.user__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+.user__menu {
+    position: absolute;
+    top: calc(53px + 16px);
+    right: 0;
+    width: 266px;
+}
+
+@media (max-width: 766px) {
+    .user__avatar {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}

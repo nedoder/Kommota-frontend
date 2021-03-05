@@ -1,0 +1,73 @@
+@media (min-width: 991px) {
+    .popular-categories {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .popular-categories__box {
+        flex-basis: 10rem;
+    }
+}
+
+.popular-categories__box {
+    height: 100%;
+    min-height: 10rem;
+    text-align: center;
+    display: grid !important;
+    place-items: center;
+    align-content: center;
+    grid-row-gap: 1rem;
+    padding: 1.25rem;
+    border-radius: .5rem;
+    background-color: var(--neutral-900);
+    transition: background-color .2s ease-in-out, color .2s ease-in-out;
+}
+
+.popular-categories__box-title {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 112%;
+    color: var(--neutral-500);
+}
+
+.popular-categories__box:hover,
+.popular-categories__box:active,
+.popular-categories__box:focus {
+    background-color: var(--secondary-500);
+}
+
+.popular-categories__box:hover .popular-categories__box-icon path,
+.popular-categories__box:active .popular-categories__box-icon path,
+.popular-categories__box:focus .popular-categories__box-icon path {
+    stroke: var(--neutral-900);
+}
+
+.popular-categories__box:hover .popular-categories__box-title,
+.popular-categories__box:active .popular-categories__box-title,
+.popular-categories__box:focus .popular-categories__box-title {
+    color: var(--neutral-900);
+}
+
+.popular-categories__box-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+@media (max-width: 766px) {
+    .popular-categories__box-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+.popular-categories .slick-track {
+    display: flex !important;
+}
+
+.popular-categories .slick-slide {
+    height: auto !important;
+}
+
+.popular-categories .slick-slide > div {
+    height: 100%;
+}

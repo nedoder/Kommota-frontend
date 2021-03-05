@@ -1,0 +1,36 @@
+table {
+    width: 80%;
+    margin: 1rem auto;
+    text-align: center;
+    border-radius: .5rem;
+    border: 2px solid var(--primary-500);
+    border-collapse: collapse;
+}
+
+.headings,
+.tableRow,
+.items {
+    border-radius: .5rem;
+    border: 2px solid var(--primary-500);
+}
+
+.items {
+    width: 16.66%;
+}
+
+.productsButton {
+    padding: .5rem 1rem;
+    margin: .5rem;
+    background-color: var(--secondary-500);
+    border-radius: .5rem;
+}
+
+.wrappedProducts {
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.deleteBTN {
+    background-color: var(--primary-400);
+    padding: .5rem;
+}

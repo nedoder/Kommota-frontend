@@ -1,0 +1,16 @@
+@import "./styles/resets/normalize.css";
+@import "./styles/resets/reset.local.css";
+
+@import "./styles/base/variables.css";
+@import "./styles/base/typography.css";
+@import "./styles/base/container.css";
+@import "styles/base/background.css";
+@import "styles/base/helpers.css";
+@import "styles/base/shadow.css";
+@import "styles/base/font-color.css";
+
+@import "styles/shared/dropdown.css";
+@import "styles/shared/input.css";
+@import "styles/shared/button.css";
+@import "styles/shared/badge.css";
+@import "styles/shared/slick.css";

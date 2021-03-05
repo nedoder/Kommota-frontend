@@ -1,0 +1,39 @@
+.edituser {
+    width: 60%;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 2px solid var(--primary-500);
+}
+
+#editname,
+#lastName,
+#pass,
+#mail,
+#file,
+#editimage {
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: .5rem;
+    border: 2px solid var(--neutral-300);
+}
+
+.editbtn {
+    padding: .5rem 1rem;
+    margin: .5rem;
+    background-color: var(--secondary-500);
+    border-radius: .5rem;
+}
+
+.editTitle {
+    margin: .5rem;
+    font-weight: bold;
+    padding: .5rem;
+}
+
+@media (max-width: 600px) {
+    .editUser {
+        width: 90%;
+    }
+}

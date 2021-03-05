@@ -1,0 +1,33 @@
+.slick-slide {
+    box-sizing: border-box;
+    padding: 0 .875rem;
+}
+
+.slick-arrow {
+    z-index: 1;
+    width: 25px !important;
+    height: 25px !important;
+}
+
+.slick-arrow:before {
+    font-size: 25px !important;
+    color: var(--neutral-600) !important;
+}
+
+.slick-prev {
+    left: 0 !important;
+}
+
+.slick-next {
+    right: 0 !important;
+}
+
+@media (min-width: 767px) {
+    .slick-prev {
+        left: -25px !important;
+    }
+
+    .slick-next {
+        right: -25px !important;
+    }
+}

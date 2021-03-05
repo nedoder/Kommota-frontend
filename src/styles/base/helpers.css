@@ -1,0 +1,31 @@
+/*Margins*/
+.mr-8 {
+    margin-right: .5rem;
+}
+
+.mt-24 {
+    margin-top: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 0.25rem;
+}
+
+.mb-13 {
+    margin-bottom: 0.8125rem;
+}
+
+/*Paddings*/
+.py-50 {
+    padding-top: 3.125rem;
+    padding-bottom: 3.125rem;
+}
+
+.o-hidden {
+    overflow: hidden;
+}
+
+.icon-24 {
+    width: 1.5rem;
+    height: 1.5rem;
+}

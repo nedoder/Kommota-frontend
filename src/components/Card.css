@@ -1,0 +1,153 @@
+.card {
+    position: relative;
+    max-width: 15.9375rem;
+    min-height: 21.1875rem;
+    background-color: var(--white);
+    border-radius: .5rem;
+    display: grid;
+    grid-template-rows: 11.25rem 1fr;
+}
+
+.card__image-wrapper {
+    overflow: hidden;
+    border-top-right-radius: .5rem;
+    border-top-left-radius: .5rem;
+}
+
+.card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease-in-out;
+}
+
+.card__image:hover {
+    transform: scale(1.2);
+}
+
+.card__body {
+    position: relative;
+    padding: 30px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card__seller {
+    position: absolute;
+    top: -1.5625rem;
+    right: 1.25rem;
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 0.625rem;
+    overflow: hidden;
+}
+
+.card__seller-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card__category {
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 150%;
+    letter-spacing: 0.1px;
+    color: var(--neutral-600);
+}
+
+.card__category:hover {
+    color: var(--primary-600);
+    text-decoration: underline;
+}
+
+.card__title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 112%;
+    color: var(--neutral-900);
+}
+
+.card__title:hover {
+    color: var(--primary-600);
+}
+
+.card__footer {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.card__price {
+    margin-right: 0.75rem;
+    color: var(--primary-500);
+    font-weight: 600;
+}
+
+.card__price-bitcoin {
+    width: 1.125rem;
+    height: 1.125rem;
+    vertical-align: middle;
+    margin-left: 0.25rem;
+}
+
+.card__badge-giveaway {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    z-index: 1;
+}
+
+/*Heart button*/
+.card__heart {
+    position: absolute;
+    top: 0.9375rem;
+    left: 0.9375rem;
+}
+
+.card__heart {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--neutral-100);
+    transition: background-color .1s ease-in;
+}
+
+.card__heart:hover {
+    background-color: var(--primary-100);
+}
+
+.card__heart--active,
+.card__heart:active {
+    background-color: var(--neutral-100);
+}
+
+.card__heart__icon {
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+.card__heart__icon path {
+    transition: fill .1s ease-in;
+}
+
+.card__heart:hover .card__heart__icon path {
+    fill: var(--primary-600);
+}
+
+.card__heart--active .card__heart__icon path,
+.card__heart:active .card__heart__icon path {
+    fill: var(--primary-500);
+}

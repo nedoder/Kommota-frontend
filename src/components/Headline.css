@@ -1,0 +1,62 @@
+.headline {
+    margin-bottom: 3rem;
+    padding-bottom: 1.125rem;
+    position: relative;
+}
+
+.headline-with-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.headline-title {
+    font-weight: 800;
+    font-size: 1.8rem;
+    line-height: 112%;
+    letter-spacing: -0.2px;
+    color: var(--neutral-900);
+    transition: color .1s ease-in;
+    cursor: default;
+}
+
+.headline-title::after {
+    content: '';
+    width: 5rem;
+    height: 0.3125rem;
+    background-color: var(--primary-500);
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
+
+.headline-title a:hover {
+    color: var(--primary-500);
+}
+
+.headline-link {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 112%;
+    display: block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+    background-color: var(--neutral-200);
+    color: var(--neutral-600);
+    transition: color .1s ease-in;
+}
+
+.headline-link::after {
+    content: "\2192";
+    margin-left: .5rem;
+}
+
+.headline-link:hover,
+.headline-link:focus {
+    color: var(--primary-500);
+}
+
+.headline-link:active {
+    color: var(--primary-600);
+}

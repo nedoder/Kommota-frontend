@@ -1,0 +1,29 @@
+.page-not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-not-found__icon {
+    width: 25.75rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+}
+
+.page-not-found__title {
+    font-weight: 800;
+    font-size: 1.8rem;
+    line-height: 112%;
+    letter-spacing: -0.2px;
+    color: var(--neutral-900);
+    margin-bottom: 1rem;
+}
+
+.page-not-found__subtitle {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 150%;
+    color: var(--neutral-700);
+    margin-bottom: 4.5rem;
+}

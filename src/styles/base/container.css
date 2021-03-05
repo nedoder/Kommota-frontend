@@ -1,0 +1,30 @@
+.container {
+    max-width: 1174px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.container--fluid {
+    max-width: 1440px;
+}
+
+@media (min-width: 767px) {
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/*Main content*/
+main,
+.error-page {
+    min-height: calc(100vh - 70px);
+}
+
+@media (min-width: 767px) {
+    main,
+    .error-page {
+        min-height: calc(100vh - 90px - 38px);
+    }
+}

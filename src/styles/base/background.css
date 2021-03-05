@@ -1,0 +1,20 @@
+.bg-primary-500 {
+    background-color: var(--primary-500);
+}
+
+.bg-neutral-200 {
+    background-color: var(--neutral-200);
+}
+
+.bg-disabled {
+    background-color: var(--disabled);
+}
+
+.bg-gradient {
+    background: linear-gradient(270deg, var(--primary-500) 0%, #FF931C 21.88%, var(--secondary-500) 100%);
+}
+
+.bg-overlay {
+    background-color: var(--primary-900);
+    opacity: .5;
+}

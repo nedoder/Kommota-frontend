@@ -22,11 +22,14 @@
     right: 0 !important;
 }
 
+.slick-track {
+    transform: translate3d(0px, 0px, 0px) !important;
+}
+
 @media (min-width: 767px) {
     .slick-prev {
         left: -25px !important;
     }
-
     .slick-next {
         right: -25px !important;
     }

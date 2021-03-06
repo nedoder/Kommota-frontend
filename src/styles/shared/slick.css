@@ -23,7 +23,7 @@
 }
 
 .slick-track {
-    transform: translate3d(0px, 0px, 0px) !important;
+    margin-left: calc(-100% + 0px) !important;
 }
 
 @media (min-width: 767px) {

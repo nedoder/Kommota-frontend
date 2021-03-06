@@ -97,14 +97,11 @@ class Signup extends React.Component {
       axios
         .post('https://kommota.herokuapp.com/signup', fd)
         .then((response) => {
-          console.log(response.data)
           if (!response.data.error) {
-            console.log(response.data)
             this.props.history.push('/login')
           } else if (response.data.error) {
             if (response.data.error.errors) {
               let nodeError = response.data.error.errors
-              console.log(nodeError)
               let errArray = []
               var x
               for (x in nodeError) {

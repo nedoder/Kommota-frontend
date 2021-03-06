@@ -24,7 +24,6 @@ class Products extends React.Component {
         })
             .then((response) => {
                 if (response.data.error) {
-                    console.log(response.data.error);
                     this.setState({
                         userid: "",
                         error: response.data.error,
@@ -81,7 +80,7 @@ class Products extends React.Component {
             }
            
             return (
-            <table>
+            <table   key={product._id}>
             <tbody>
                 <tr className = "tableRow">
                     <th className="headings">Ime</th>

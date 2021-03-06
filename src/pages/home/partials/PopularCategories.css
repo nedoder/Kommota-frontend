@@ -3,7 +3,6 @@
         display: flex;
         justify-content: space-between;
     }
-
     .popular-categories__box {
         flex-basis: 10rem;
     }
@@ -62,12 +61,13 @@
 
 .popular-categories .slick-track {
     display: flex !important;
+    margin-left: 0px !important;
 }
 
 .popular-categories .slick-slide {
     height: auto !important;
 }
 
-.popular-categories .slick-slide > div {
+.popular-categories .slick-slide>div {
     height: 100%;
 }

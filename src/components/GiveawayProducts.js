@@ -57,8 +57,8 @@ class GiveawayProducts extends React.Component {
             <Slider {...this.state.sliderSettings} className="products-grid">
             {this.state.giveawayProducts.map((product) => {
                     return (
-                    <Link to={`/product/${product._id}`}>
-                    <React.Fragment key={product._id}>
+                    <Link to={`/product/${product._id}`} key={product._id}>
+                    <React.Fragment>
                     <Card
                     category={product.category}
                     name={product.name}

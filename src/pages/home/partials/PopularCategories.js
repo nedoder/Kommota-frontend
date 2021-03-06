@@ -2,7 +2,6 @@ import React from "react";
 
 import Headline from "../../../components/Headline";
 import './PopularCategories.css';
-
 import Slider from "react-slick";
 
 function PopularCategories() {

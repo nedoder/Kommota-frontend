@@ -60,7 +60,6 @@ class EditUser extends React.Component {
   onFormSubmit = (event) => {
     const token = JSON.parse(JSON.stringify(localStorage.getItem('token')))
     const bearer = 'Bearer Token' + token
-    console.log(bearer)
     event.preventDefault()
     let checkMail = this.validateEmail(this.state.email)
     let psw = document.getElementById('pass').value
@@ -129,7 +128,6 @@ class EditUser extends React.Component {
           } else if (response.data.error) {
             if (response.data.error.errors) {
               let nodeError = response.data.error.errors
-              console.log(nodeError)
               let errArray = []
               var x
               for (x in nodeError) {

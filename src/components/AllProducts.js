@@ -60,8 +60,8 @@ class AllProducts extends React.Component {
             {this.state.allProducts.map((product) => {
                 
                     return (
-                        <Link to={`/product/${product._id}`}>
-                        <React.Fragment key={product._id}>
+                        <Link to={`/product/${product._id}`} key={product._id}>
+                        <React.Fragment>
                         
                         <Card
                         category={product.category}

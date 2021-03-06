@@ -21,7 +21,7 @@ class RecommendedProducts extends React.Component {
                 breakpoint: 991,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 3
+                    slidesToScroll: 3            
                 }
             },
             {
@@ -60,8 +60,8 @@ class RecommendedProducts extends React.Component {
                 
                     return (
                         
-                    <Link to={`/product/${product._id}`}>
-                    <React.Fragment key={product._id}>
+                    <Link to={`/product/${product._id}`} key={product._id}>
+                    <React.Fragment>
                     <Card
                     category={product.category}
                     name={product.name}

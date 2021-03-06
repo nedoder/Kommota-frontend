@@ -72,7 +72,6 @@ class CreateProduct extends React.Component {
         })
             .then((response) => {
                 if (response.data.error) {
-                    console.log(response.data.error);
                     this.setState({
                         error: response.data.error,
                     })

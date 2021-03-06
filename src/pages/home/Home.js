@@ -4,11 +4,12 @@ import PopularCategories from './partials/PopularCategories';
 import NewInOffer from "./partials/NewInOffer";
 import Giveaway from "./partials/Giveaway";
 import Recommended from "./partials/Recommended";
+import CategoryProduct from "../../components/CategoryProduct";
 
 function Home() {
     return (
         <React.Fragment>
-            <PopularCategories/>
+            <CategoryProduct/>
             <NewInOffer/>
             <Giveaway/>
             <Recommended/>

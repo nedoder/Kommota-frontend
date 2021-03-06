@@ -8,6 +8,15 @@
     }
 }
 
+.popular-categories .slick-slide {
+    height: auto !important;
+    margin-left: -100% !important;
+}
+
+.popular-categories .slick-slide {
+    margin-left: auto !important;
+}
+
 .popular-categories__box {
     height: 100%;
     min-height: 10rem;
@@ -57,11 +66,25 @@
         width: 2.5rem;
         height: 2.5rem;
     }
+    .popular-categories .slick-track {
+        margin-left: auto !important;
+    }
+    .popular-categories .slick-slide {
+        margin-left: auto !important;
+    }
+}
+
+@media (min-width: 766px) {
+    .popular-categories .slick-track {
+        margin-left: auto !important;
+    }
+    .popular-categories .slick-slide {
+        margin-left: auto !important;
+    }
 }
 
 .popular-categories .slick-track {
     display: flex !important;
-    margin-left: 0px !important;
 }
 
 .popular-categories .slick-slide {

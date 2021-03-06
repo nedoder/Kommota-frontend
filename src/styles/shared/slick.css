@@ -23,7 +23,7 @@
 }
 
 .slick-track {
-    margin-left: calc(-100% + 0px) !important;
+    margin-left: calc(-100%) !important;
 }
 
 @media (min-width: 767px) {
@@ -32,5 +32,14 @@
     }
     .slick-next {
         right: -25px !important;
+    }
+    .slick-track {
+        margin-left: auto !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .slick-track {
+        margin-left: calc(-100%) !important;
     }
 }

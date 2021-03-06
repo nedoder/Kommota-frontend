@@ -42,7 +42,6 @@ class CategoryProduct extends React.Component {
       method: 'get',
       url: 'https://kommota.herokuapp.com/products',
     }).then((response) => {
-      console.log(response.data)
       response.data.map((data) => {
         let image = data.image.slice(0, -18)
         image = image.replace('file/d/', 'thumbnail?id=')
@@ -59,22 +58,20 @@ class CategoryProduct extends React.Component {
     let newProducts = this.state.allProducts.filter(
       (product) => product.category == e,
     )
-    console.log(newProducts)
     this.setState({
       showProducts: newProducts,
     })
   }
 
   render() {
-    console.log(this.state.allProducts)
     return (
       <>
         <PopularCategories filter={this.filter} />
         <Slider {...this.state.sliderSettings} className="products-grid">
           {this.state.showProducts.map((product) => {
             return (
-              <Link to={`/product/${product._id}`}>
-                <React.Fragment key={product._id}>
+              <Link to={`/product/${product._id}`} key={product._id}>
+                <React.Fragment>
                   <Card
                     category={product.category}
                     name={product.name}

@@ -27,6 +27,7 @@ class EditUser extends React.Component {
       )
       let userForEdit = findUser[0]
       this.setState({
+        id: userForEdit._id,
         name: userForEdit.name,
         lastName: userForEdit.lastName,
         password: '',
@@ -58,8 +59,6 @@ class EditUser extends React.Component {
     })
   }
   onFormSubmit = (event) => {
-    const token = JSON.parse(JSON.stringify(localStorage.getItem('token')))
-    const bearer = 'Bearer Token' + token
     event.preventDefault()
     let checkMail = this.validateEmail(this.state.email)
     let psw = document.getElementById('pass').value
@@ -109,11 +108,10 @@ class EditUser extends React.Component {
       const token = JSON.parse(JSON.stringify(localStorage.getItem('token')))
       const bearer = 'Bearer Token' + token
       var fd = new FormData()
-      fd.append('userid', this.state.userid)
       fd.append('name', this.state.name)
-      fd.append('description', this.state.description)
-      fd.append('price', this.state.price)
-      fd.append('quantity', this.state.quantity)
+      fd.append('lastName', this.state.lastName)
+      fd.append('email', this.state.email)
+      fd.append('password', this.state.password)
       fd.append('avatar', this.state.avatar)
       fd.append('id', this.state.id)
       axios({
@@ -124,7 +122,7 @@ class EditUser extends React.Component {
       })
         .then((response) => {
           if (!response.data.error) {
-            this.props.history.push('/users')
+            this.props.history.push('/admin')
           } else if (response.data.error) {
             if (response.data.error.errors) {
               let nodeError = response.data.error.errors
@@ -169,7 +167,6 @@ class EditUser extends React.Component {
   }
 
   render() {
-    console.log(this.state.id)
 
     return (
       <div>

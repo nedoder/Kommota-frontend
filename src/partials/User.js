@@ -1,6 +1,7 @@
 import React from "react";
 import './User.css';
 import {NavLink} from "react-router-dom";
+import { Redirect } from 'react-router-dom'
 
 class User extends React.Component {
     constructor() {
@@ -19,17 +20,18 @@ class User extends React.Component {
       showMenu: !this.state.showMenu,
     });
   }
+
     render() {
     return (
         <div className="user">
-            <button className="user__avatar"  onClick={this.showMenu}>
+            <button className="user__avatar" onClick={this.showMenu}>
                 <img src="./imgs/icons/avatar.svg" alt="Avatar"/>
             </button>
             {
           this.state.showMenu
             ? (
             <ul className="user__menu dropdown shadow-dark">
-                <li>
+                <li  onClick={this.showMenu}>
                     <NavLink to="/login" className="dropdown__link">
                         <img className="dropdown__link-icon"
                              src="./imgs/icons/login.svg" alt=""
@@ -39,7 +41,7 @@ class User extends React.Component {
                         </span>
                     </NavLink>
                 </li>
-                <li>
+                <li  onClick={this.showMenu}>
                     <NavLink to="/signup" className="dropdown__link">
                         <img className="dropdown__link-icon"
                              src="./imgs/icons/sign-up.svg" alt=""
@@ -49,7 +51,7 @@ class User extends React.Component {
                         </span>
                     </NavLink>
                 </li>
-                <li>
+                <li  onClick={this.showMenu}>
                     <NavLink to="/admin" className="dropdown__link">
                         <img className="dropdown__link-icon"
                              src="./imgs/icons/admin-panel.svg" alt=""
@@ -59,7 +61,7 @@ class User extends React.Component {
                         </span>
                     </NavLink>
                 </li>
-                <li>
+                <li  onClick={this.showMenu}>
                     <NavLink to="/logout" className="dropdown__link">
                         <img className="dropdown__link-icon"
                              src="./imgs/icons/logout.svg" alt=""

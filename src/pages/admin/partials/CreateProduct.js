@@ -30,11 +30,27 @@ class CreateProduct extends React.Component {
       };
     onFormSubmit = (event) => {
         event.preventDefault();
-        if (this.state.image === "" || this.state.image === undefined) {
+        if (this.state.image === "" || typeof this.state.image === undefined) {
             this.setState({
               error: "Morate unijeti sliku proizvoda"
             });
         }
+        if (
+            this.state.name === '' ||
+            this.state.category === '' ||
+            this.state.description === '' ||
+            this.state.price === '' ||
+            this.state.quantity === '' ||
+            typeof this.state.name === 'undefined' ||
+            typeof this.state.category === 'undefined' ||
+            typeof this.state.description === 'undefined' ||
+            typeof this.state.quantity === 'undefined' ||
+            typeof this.state.price === 'undefined'
+          ) {
+            this.setState({
+              error: 'Morate popuniti sva polja',
+            });
+        } else {
         var fd = new FormData();
         fd.append("userid", this.state.userid);
         fd.append("name", this.state.name);
@@ -46,7 +62,6 @@ class CreateProduct extends React.Component {
         fd.append("giveaway", this.state.giveaway);
         const token = JSON.parse(JSON.stringify(localStorage.getItem("token")));
         const bearer = 'Bearer Token' + token;
-        console.log(token);
         axios({
             method: 'post',
             url: "https://kommota.herokuapp.com/createproduct",
@@ -71,6 +86,7 @@ class CreateProduct extends React.Component {
                 })
             );
     };
+}
     renderError() {
         if (this.state.error) {
             return <p> { this.state.error } </p>;

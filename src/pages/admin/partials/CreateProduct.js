@@ -23,9 +23,9 @@ class CreateProduct extends React.Component {
         });
     };
     
-    onFileChangeHandler = e => {
+    onFileChangeHandler = (event) => {
         this.setState({
-          image: e.target.files[0],
+          image: event.target.files[0],
         });
       };
     onFormSubmit = (event) => {
@@ -43,7 +43,6 @@ class CreateProduct extends React.Component {
         fd.append("price", this.state.price);
         fd.append("quantity", this.state.quantity);
         fd.append("image", this.state.image);
-        console.log(this.state.image, this.state.image.name);
         fd.append("giveaway", this.state.giveaway);
         const token = JSON.parse(JSON.stringify(localStorage.getItem("token")));
         const bearer = 'Bearer Token' + token;
@@ -53,8 +52,7 @@ class CreateProduct extends React.Component {
             url: "https://kommota.herokuapp.com/createproduct",
             data: fd,
             headers: {
-                Authorization : bearer,
-                "Content-Type": "multipart/form-data"
+                Authorization : bearer
             }
         })
             .then((response) => {
@@ -67,9 +65,9 @@ class CreateProduct extends React.Component {
                     console.log(response.data);
                 }
             })
-            .catch((err) =>
+            .catch((error) =>
                 this.setState({
-                    error: "Error occured.Please try again. ",
+                    error: "Došlo je do greške.Molimo pokušajte ponovo. ",
                 })
             );
     };
@@ -88,7 +86,7 @@ class CreateProduct extends React.Component {
             <input type = "text" placeholder = "Opis" id = "description" name = "description" onChange = { this.onInputChange } value = { this.state.description }/><br/>
             <input type = "number" placeholder = "Količina" id = "quantity" name = "quantity" onChange = { this.onInputChange } value = { this.state.quantity }/><br/>
             <input type = "number" placeholder = "Cijena" id = "price" name = "price" onChange = { this.onInputChange } value = { this.state.price }/><br/>
-            <input type = "file"  id = "image" name = "file" onChange={ this.onFileChangeHandler}/><br/>
+            <input type = "file"  id = "file" name = "image" onChange={ this.onFileChangeHandler}/><br/>
             <label htmlFor="giveaway"> Poklon</label>
             <input type = "checkbox" id = "giveaway" name = "giveaway"  value = "giveaway" onChange = {(e) => this.setState({giveaway: !this.state.giveaway.value})}/><br/>
             <select name="category" id="category" value= {this.state.category} onChange = { this.onInputChange }>

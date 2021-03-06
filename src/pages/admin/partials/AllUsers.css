@@ -16,12 +16,35 @@
     text-align: center;
 }
 
-.title {
+.title,
+.userstitle {
     text-align: center;
+}
+
+.userstitle {
+    margin: 1rem;
+    font-weight: bold;
+}
+
+.userdiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.userdiv img {
+    width: 15%;
 }
 
 @media (max-width: 600px) {
     .users {
         width: 90%;
+    }
+}
+
+@media (max-width: 300px) {
+    .userdiv img {
+        width: 10%;
     }
 }

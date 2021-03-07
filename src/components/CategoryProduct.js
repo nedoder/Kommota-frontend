@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card'
 import PopularCategories from '../pages/home/partials/PopularCategories'
-
+import Filter from "../pages/home/partials/Filter"
 import { Link } from 'react-router-dom'
 import Slider from 'react-slick'
 import './ProductsGrid.css'
@@ -61,12 +61,25 @@ class CategoryProduct extends React.Component {
     this.setState({
       showProducts: newProducts,
     })
-  }
+  };
+
+  filter1 = (newProducts) => {
+    newProducts.map((data) => {
+      let image = data.image.slice(0, -18)
+      image = image.replace('file/d/', 'thumbnail?id=')
+      data.image = image
+    })
+    this.setState({
+      showProducts: newProducts,
+    })
+  };
+
 
   render() {
     return (
       <>
         <PopularCategories filter={this.filter} />
+        {/* <Filter filter1={this.filter1} /> */}
         <Slider {...this.state.sliderSettings} className="products-grid">
           {this.state.showProducts.map((product) => {
             return (

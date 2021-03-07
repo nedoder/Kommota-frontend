@@ -13,7 +13,7 @@ import Signup from "./pages/signup/Signup";
 import EditUser from "./pages/editProfile/EditUser"
 import Product from "./pages/product/partials/Product"
 import Logout from "./components/Logout";
-
+import Shopping from "./pages/shoppingcart/ShoppingCart"
 // Slider css
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -30,6 +30,7 @@ ReactDOM.render(
             <Route exact path="/product/:id" component={Product}/>
             <Route exact path="/404" component={PageNotFound}/>
             <Route exact path="/logout" component={Logout}/>
+            <Route exact path="/shoppingcart" component={Shopping}/>
         </main>
         <Footer/>
     </Router>,

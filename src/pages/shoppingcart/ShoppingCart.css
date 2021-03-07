@@ -1,0 +1,25 @@
+.heading {
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+    margin: 1rem auto;
+}
+
+.deleteCart,
+.checkout {
+    padding: .5rem 1rem;
+    background-color: var(--primary-400);
+    border-radius: .5rem;
+    margin: .5rem;
+}
+
+.shop {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+
+.items,
+.headings {
+    padding: .5rem;
+}

@@ -7,7 +7,8 @@ class Shopping extends React.Component {
         id: localStorage.getItem("id"),
         email: localStorage.getItem("email"),
         cart: [],
-        subtotal: ""
+        subtotal: "",
+        error: null
     }
 
     componentDidMount() {
@@ -19,7 +20,11 @@ class Shopping extends React.Component {
                 data: { id: this.state.id },
                 headers: { Authorization: bearer },
             }).then((response) => {
-                console.log(response.data.data)
+                if (response.data.error) {
+                    this.setState({
+                      error: response.data.error,
+                    })
+                  } else {
                 response.data.data.items.map((data) => {
                     let name = data.productId.name;
                     data.productId.name = name;
@@ -28,10 +33,16 @@ class Shopping extends React.Component {
                     cart: response.data.data.items,
                     subtotal: response.data.data.subTotal
                   })
+                }
             })
             .catch((err) => console.log(err));
     }
 
+    renderError() {
+        if (this.state.error) {
+            return <p className="title"> { this.state.error } </p>;
+        }
+    }
     handleDelete = (e) => {
         e.preventDefault();
         const token = JSON.parse(JSON.stringify(localStorage.getItem('token')));
@@ -42,7 +53,16 @@ class Shopping extends React.Component {
             data: { id: this.state.id },
             headers: { Authorization: bearer },
         }).then((response) => {
-            console.log(response);
+            if (response.data.error) {
+                this.setState({
+                  error: response.data.error,
+                })
+              } else {
+            this.setState({
+                cart: [],
+                subtotal: 0
+              })
+            }
         })
         .catch((err) => console.log(err));
     }
@@ -57,12 +77,24 @@ class Shopping extends React.Component {
             data: { email: this.state.email },
             headers: { Authorization: bearer },
         }).then((response) => {
-            console.log(response);
+            if (response.data.error) {
+                this.setState({
+                  error: response.data.error,
+                })
+              } else {
+            this.setState({
+                cart: [],
+                subtotal: 0
+              })
+            }
         })
         .catch((err) => console.log(err));
     }
 
     render() {
+        if (this.state.error !== null) {
+            return <h2 className="userstitle">{ this.state.error }</h2>
+          } else {
         return ( 
             <div className="shop">
             <h3 className="heading">Vaša korpa</h3> 
@@ -94,6 +126,7 @@ class Shopping extends React.Component {
             <button className="checkout" onClick={this.handleCheckout}>Nastavi sa narudžbinom</button>
             </div>
         )
+          }
     }
 }
 export default Shopping

@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import './Filter.css'
 
 class Filter extends React.Component {
   state = {
@@ -77,83 +78,92 @@ class Filter extends React.Component {
 
   render() {
     return (
-      <div>
+      <div  className="filter">
         <div>
-          <h3>Kategorije</h3>
+          <h3 className="title">Kategorije</h3>
           <input
             type="checkbox"
             name="category"
             value="Dnevna soba"
+            className = "input"
             onChange={this.onInputChange}
           />
-          <label htmlFor="vehicle1"> Dnevna soba</label>
+          <label htmlFor="vehicle1" className="labels"> Dnevna soba</label>
           <input
             type="checkbox"
             name="category"
             value="Stolice"
+            className = "input"
             onChange={this.onInputChange}
           />
-          <label htmlFor="vehicle1"> Stolice</label>
+          <label htmlFor="vehicle1" className="labels"> Stolice</label>
           <input
             type="checkbox"
             name="category"
             value="Stolovi"
+            className = "input"
             onChange={this.onInputChange}
           />
-          <label htmlFor="vehicle1"> Stolovi</label>
+          <label htmlFor="vehicle1" className="labels"> Stolovi</label>
           <input
             type="checkbox"
             name="category"
             value="Ormari"
+            className = "input"
             onChange={this.onInputChange}
           />
-          <label htmlFor="vehicle1"> Ormari</label>
+          <label htmlFor="vehicle1" className="labels"> Ormari</label>
           <input
             type="checkbox"
             name="category"
             value="Spavaća soba"
+            className = "input"
             onChange={this.onInputChange}
           />
-          <label htmlFor="vehicle1"> Spavaća soba</label>
+          <label htmlFor="vehicle1" className="labels"> Spavaća soba</label>
           <input
             type="checkbox"
             name="category"
             value="Police"
+            className = "input"
             onChange={this.onInputChange}
           />
-          <label htmlFor="vehicle1"> Police</label>
+          <label htmlFor="vehicle1" className="labels"> Police</label>
         </div>
         <div>
-          <h3>Cijena</h3>
-          <div>
-            <label htmlFor="minprice">Min cijena</label>
+          <div className="filterInput">
+            <label htmlFor="minprice" className="labels">Min cijena</label>
             <input
               type="number"
               name="minprice"
+              className = "input"
               onChange={this.onInputChange}
             />
-            <label htmlFor="maxprice">Max cijena</label>
+            <label htmlFor="maxprice" className="labels">Max cijena</label>
             <input
               type="number"
               name="maxprice"
+              className = "input"
               onChange={this.onInputChange}
             />
           </div>
-          <div>
-            <label htmlFor="minquantity">Min kolicina</label>
+          <div className="filterInput">
+            <label htmlFor="minquantity" className="labels">Min kolicina</label>
             <input
               type="number"
               name="minquantity"
+              className = "input"
               onChange={this.onInputChange}
             />
-            <label htmlFor="maxquantity">Max kolicina</label>
+            <label htmlFor="maxquantity" className="labels">Max kolicina</label>
             <input
               type="number"
               name="maxquantity"
+              className = "input"
               onChange={this.onInputChange}
             />
           </div>
-          <button type="button" onClick={this.onFormSubmit}>
+          <button type="button" onClick={this.onFormSubmit} className="filterBtn">
             Filtriraj
           </button>
         </div>

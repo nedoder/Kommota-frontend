@@ -2,6 +2,7 @@ import React from "react";
 import './Product.css';
 import axios from 'axios';
 import More from "./MoreFromCategory"
+import { Redirect } from 'react-router-dom'
 
 class Product extends React.Component {
     
@@ -12,7 +13,8 @@ class Product extends React.Component {
         image: "",
         category: "",
         seen: "",
-        id: ""
+        id: "",
+        error: null
     }
     componentDidMount() {
     
@@ -58,10 +60,17 @@ class Product extends React.Component {
             headers: { Authorization: bearer },
           })
             .then((response) => {
-                console.log(response.data);
+                if (response.data.error) {
+                    this.setState({
+                      error: response.data.error,
+                    })
+                } else {
+                window.location.href = '/shoppingcart';
+                }
             })
             .catch((err) => console.log(err));
-        }
+            
+    }
 
     render() {
     return (
